@@ -4,14 +4,19 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.http.ResponseEntity;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.CrossOrigin;
 
 @RestController
 @RequestMapping("/potato")
+@CrossOrigin(origins = "http://localhost:3000")
+
 public class SupGordo {
 
   @GetMapping("/lies")
-	public String getMessage() {
-		return "Surprise is the hood!";
+	ResponseEntity<String> message() {
+		return new ResponseEntity<> ("Surprise is the hood!", HttpStatus.OK);
 	}
   @GetMapping("/truth")
   	public String gettingMessage() {
@@ -29,4 +34,15 @@ public class SupGordo {
 		return str;
 	}
 
+  @GetMapping("/users")
+  public String getUsers {
+	 private final LoginStuffService loginStuffService
+		 public UserController(LoginStuffService loginStuffService) {
+			 this.loginStuffService = loginStuffService;									                                       }
+	 @GetMapping
+	 public List<LoginStuff> getAllUsers() {
+	 return loginStuffService.getAllLoginStuff();
+	 }
+
+	}
 }
