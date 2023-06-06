@@ -8,7 +8,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.CrossOrigin;
 
-
 @RestController
 @RequestMapping("/potato")
 @CrossOrigin(origins = "http://localhost:3000")
@@ -35,4 +34,15 @@ public class SupGordo {
 		return str;
 	}
 
+  @GetMapping("/users")
+  public String getUsers {
+	 private final LoginStuffService loginStuffService
+		 public UserController(LoginStuffService loginStuffService) {
+			 this.loginStuffService = loginStuffService;									                                       }
+	 @GetMapping
+	 public List<LoginStuff> getAllUsers() {
+	 return loginStuffService.getAllLoginStuff();
+	 }
+
+	}
 }
